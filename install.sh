@@ -22,7 +22,7 @@ echo "eula=true" > eula.txt
 installJq() {
 if [ ! -e "tmp/jq" ]; then
 mkdir -p tmp
-curl -s -o tmp/jq -L https://github.com/jqlang/jq/releases/download/jq-1.7rc1/jq-linux-amd64
+curl -s -o tmp/jq -L https://github.com/jqlang/jq/releases/download/jq-1.7.1/jq-linux-amd64
 chmod +x tmp/jq
 fi
 }
