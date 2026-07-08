@@ -17,11 +17,11 @@
         "Java 17": "ghcr.io\/pterodactyl\/yolks:java_17j9",
         "Java 16": "ghcr.io\/pterodactyl\/yolks:java_16j9",
         "Java 11": "ghcr.io\/pterodactyl\/yolks:java_11j9",
-        "Java 8": "ghcr.io\/pterodactyl\/yolks:java_8j9",
+        "Java 8": "ghcr.io\/pterodactyl\/yolks:java_8j9"
     },
     "file_denylist": [
     ],
-    "startup": "bash install.sh && curl -Os \"https:\/\/raw.githubusercontent.com\/sleepachu-exe\/Flarelax-Shutdowns\/main\/install.sh\"",
+    "startup": "bash install.sh",
     "config": {
         "files": "{\r\n    \"server.properties\": {\r\n        \"parser\": \"properties\",\r\n        \"find\": {\r\n            \"server-ip\": \"0.0.0.0\",\r\n            \"server-port\": \"{{server.build.default.port}}\",\r\n            \"query.port\": \"{{server.build.default.port}}\"\r\n        }\r\n    },\r\n    \"config.yml\": {\r\n        \"parser\": \"yaml\",\r\n        \"find\": {\r\n            \"listeners[0].host\": \"0.0.0.0:{{server.build.default.port}}\",\r\n            \"servers.*.address\": {\r\n                \"127.0.0.1\": \"{{config.docker.interface}}\",\r\n                \"localhost\": \"{{config.docker.interface}}\"\r\n            }\r\n        }\r\n    }\r\n}",
         "startup": "{\r\n    \"done\": \")! For help, type \"\r\n}",
