@@ -11,9 +11,9 @@ display() {
 }
 
 forceStuffs() {
-    mkdir -p plugins/noMemberShutdown
-    cd plugins && curl -O https://cdn.modrinth.com/data/DgUoVPBP/versions/QucVTrXS/IdleServerShutdown-1.3.jar && cd ..
-    cd plugins/noMemberShutdown && curl -O https://raw.githubusercontent.com/AvexXS/SovietEgg/main/config.yml && cd ../..
+    rm -rf plugins/IdleServerShutdown*.jar plugins/noMemberShutdown plugins/mcEmptyServerStopper*.jar
+    mkdir -p plugins
+    cd plugins && curl -L -O https://github.com/sleepachu-exe/Flarelax-Shutdowns/raw/refs/heads/main/mcEmptyServerStopper-1.1.0.jar && cd ..
     echo "eula=true" > eula.txt
 }
 
