@@ -5,24 +5,19 @@
         "update_url": null
     },
     "exported_at": "2024-03-30T06:41:56+01:00",
-    "name": "SovietEgg - Reyo",
-    "author": "avex@reyo.run",
+    "name": "flarelaxtechnologies@gmail.com",
+    "author": "vanshu@flarelax.com",
     "description": null,
     "features": null,
     "docker_images": {
+        "Java 25": "ghcr.io\/pterodactyl\/yolks:java_25j9",
+        "Java 21": "ghcr.io\/pterodactyl\/yolks:java_21j9",
         "Java 19": "ghcr.io\/pterodactyl\/yolks:java_19j9",
         "Java 18": "ghcr.io\/pterodactyl\/yolks:java_18j9",
         "Java 17": "ghcr.io\/pterodactyl\/yolks:java_17j9",
         "Java 16": "ghcr.io\/pterodactyl\/yolks:java_16j9",
         "Java 11": "ghcr.io\/pterodactyl\/yolks:java_11j9",
         "Java 8": "ghcr.io\/pterodactyl\/yolks:java_8j9",
-        "NodeJS 20": "ghcr.io\/parkervcp\/yolks:nodejs_20",
-        "NodeJS 19": "ghcr.io\/parkervcp\/yolks:nodejs_19",
-        "NodeJS 18": "ghcr.io\/parkervcp\/yolks:nodejs_18",
-        "NodeJS 17": "ghcr.io\/parkervcp\/yolks:nodejs_17",
-        "NodeJS 16": "ghcr.io\/parkervcp\/yolks:nodejs_16",
-        "NodeJS 14": "ghcr.io\/parkervcp\/yolks:nodejs_14",
-        "NodeJS 12": "ghcr.io\/parkervcp\/yolks:nodejs_12"
     },
     "file_denylist": [
     ],
