@@ -45,15 +45,25 @@ optimizeJavaServer() {
   echo "view-distance=6" >> server.properties
 }
 
+
+# If server.jar exists but is too small (corrupt), delete it to force re-download
+if [ -e "server.jar" ]; then
+    SIZE=$(wc -c < "server.jar")
+    if [ "$SIZE" -lt 1000000 ]; then
+        echo "server.jar is corrupt (${SIZE} bytes). Deleting and re-downloading..."
+        rm -f server.jar
+    fi
+fi
+
 if [ ! -e "server.jar" ]; then
     display
-    
-    echo "$(tput setaf 3)Starting the download for PaperMC ${MINECRAFT_VERSION} please wait"
+
+    echo "Starting the download for PaperMC ${MINECRAFT_VERSION} please wait"
 
     sleep 4
 
     forceStuffs
-    
+
     installJq
 
     VER_EXISTS=$(curl -s https://api.papermc.io/v2/projects/paper | jq -r --arg VERSION $MINECRAFT_VERSION '.versions[] | contains($VERSION)' | grep -m1 true)
@@ -65,22 +75,22 @@ if [ ! -e "server.jar" ]; then
 		echo -e "Specified version not found. Defaulting to the latest paper version"
 		MINECRAFT_VERSION=${LATEST_VERSION}
 	fi
-	
+
 	BUILD_NUMBER=$(curl -s https://api.papermc.io/v2/projects/paper/versions/${MINECRAFT_VERSION} | jq -r '.builds' | jq -r '.[-1]')
 	JAR_NAME=paper-${MINECRAFT_VERSION}-${BUILD_NUMBER}.jar
 	DOWNLOAD_URL=https://api.papermc.io/v2/projects/paper/versions/${MINECRAFT_VERSION}/builds/${BUILD_NUMBER}/downloads/${JAR_NAME}
-	
+
 	curl -o server.jar "${DOWNLOAD_URL}"
 
     display
-    
+
     echo -e ""
-    
+
     optimizeJavaServer
     launchJavaServer
     forceStuffs
 else
-    display   
+    display
     forceStuffs
     launchJavaServer
 fi
