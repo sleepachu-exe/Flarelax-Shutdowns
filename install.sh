@@ -19,9 +19,8 @@ $(tput setaf 6)   ☭ Народная армия непобедима!
 $(tput setaf 6)  
 $(tput setaf 6)   
 $(tput setaf 6)    
-$(tput setaf 6) COPYRIGHT 2024 ReyoServers Technology (https://reyo.run) & https://github.com/AvexXS & https://github.com/beastgamer81
-$(tput setaf 6) Please note the egg is forked from KlovitEgg (This is essentially a better version for aternos like features and is maintained will be updated with new features)
-
+$(tput setaf 6) COPYRIGHT 2024 Flarelax Technologies
+$(tput setaf 6) 
     ==========================================================================
     "  
 }
@@ -154,8 +153,7 @@ if [ ! -e "server.jar" ] && [ ! -e "nodejs" ] && [ ! -e "PocketMine-MP.phar" ]; 
 sleep 5
 echo "
   $(tput setaf 3)Which platform are you gonna use?
-  1) Paper             2) Purpur
-  3) BungeeCord        4) PocketmineMP
+  1) Paper
   "
 read -r n
 
