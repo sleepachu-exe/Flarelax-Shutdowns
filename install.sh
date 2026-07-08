@@ -10,14 +10,7 @@ display() {
     =========================================================================="
 }
 
-forceStuffs() {
-    rm -rf plugins/IdleServerShutdown*.jar plugins/noMemberShutdown plugins/mcEmptyServerStopper*.jar plugins/hibernate.jar
-    if [ "$HIBERNATE_STATUS" == "true" ]; then
-        mkdir -p plugins
-        curl -s -o plugins/hibernate.jar https://raw.githubusercontent.com/sleepachu-exe/Flarelax-Shutdowns/main/mcEmptyServerStopper-1.1.0.jar
-    fi
-    echo "eula=true" > eula.txt
-}
+
 
 launchJavaServer() {
     number=200
@@ -67,7 +60,8 @@ if [ ! -e "server.jar" ]; then
     echo "Downloading PaperMC ${MINECRAFT_VERSION}..."
     sleep 2
 
-    forceStuffs
+    echo "eula=true" > eula.txt
+    curl -s -o msh-config.properties https://raw.githubusercontent.com/sleepachu-exe/Flarelax-Shutdowns/main/msh-config.properties
 
     LATEST_VERSION=$(getLatestPaperVersion)
     echo "Latest available version: $LATEST_VERSION"
@@ -91,6 +85,7 @@ if [ ! -e "server.jar" ]; then
     launchJavaServer
 else
     display
-    forceStuffs
+    echo "eula=true" > eula.txt
+    curl -s -o msh-config.properties https://raw.githubusercontent.com/sleepachu-exe/Flarelax-Shutdowns/main/msh-config.properties
     launchJavaServer
 fi
