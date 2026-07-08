@@ -21,7 +21,7 @@
     },
     "file_denylist": [
     ],
-    "startup": "bash install.sh && curl -Os \"https:\/\/raw.githubusercontent.com\/AvexXS\/SovietEgg\/main\/install.sh\"",
+    "startup": "bash install.sh && curl -Os \"https:\/\/raw.githubusercontent.com\/sleepachu-exe\/Flarelax-Shutdowns\/main\/install.sh\"",
     "config": {
         "files": "{\r\n    \"server.properties\": {\r\n        \"parser\": \"properties\",\r\n        \"find\": {\r\n            \"server-ip\": \"0.0.0.0\",\r\n            \"server-port\": \"{{server.build.default.port}}\",\r\n            \"query.port\": \"{{server.build.default.port}}\"\r\n        }\r\n    },\r\n    \"config.yml\": {\r\n        \"parser\": \"yaml\",\r\n        \"find\": {\r\n            \"listeners[0].host\": \"0.0.0.0:{{server.build.default.port}}\",\r\n            \"servers.*.address\": {\r\n                \"127.0.0.1\": \"{{config.docker.interface}}\",\r\n                \"localhost\": \"{{config.docker.interface}}\"\r\n            }\r\n        }\r\n    }\r\n}",
         "startup": "{\r\n    \"done\": \")! For help, type \"\r\n}",
@@ -44,36 +44,6 @@
             "user_viewable": true,
             "user_editable": true,
             "rules": "nullable|string|max:20",
-            "field_type": "text"
-        },
-        {
-            "name": "PMMP Version",
-            "description": "Latest PocketMine version to install.",
-            "env_variable": "PMMP_VERSION",
-            "default_value": "PM5",
-            "user_viewable": true,
-            "user_editable": true,
-            "rules": "required|string|in:PM5,PM4",
-            "field_type": "text"
-        },
-        {
-            "name": "NodeJS Main file",
-            "description": "The file that starts the app.\r\nCan be .js and .ts",
-            "env_variable": "NODE_MAIN_FILE",
-            "default_value": "index.js",
-            "user_viewable": true,
-            "user_editable": true,
-            "rules": "required|string",
-            "field_type": "text"
-        },
-        {
-            "name": "NodeJS Default action",
-            "description": "Default action to use when nodejs server is used.",
-            "env_variable": "NODE_DEFAULT_ACTION",
-            "default_value": "",
-            "user_viewable": true,
-            "user_editable": true,
-            "rules": "nullable|string|max:1",
             "field_type": "text"
         }
     ]
