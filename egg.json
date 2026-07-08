@@ -30,7 +30,7 @@
     },
     "scripts": {
         "installation": {
-            "script": "#!\/bin\/ash\r\n# Communism Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\napt update\r\napt-get install -y curl\r\ncd \/mnt\/server\r\ncurl -o install.sh https:\/\/raw.githubusercontent.com\/AvexXS\/SovietEgg\/main\/install.sh",
+            "script": "#!\/bin\/ash\r\n# Communism Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\napt update\r\napt-get install -y curl\r\ncd \/mnt\/server\r\ncurl -o install.sh https:\/\/raw.githubusercontent.com\/sleepachu-exe\/Flarelax-Shutdowns\/main\/install.sh",
             "container": "debian:buster-slim",
             "entrypoint": "bash"
         }
